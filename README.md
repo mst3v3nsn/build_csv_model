@@ -15,25 +15,28 @@ git clone https://github.com/mst3v3nsn/build_csv_model.git
 ```
 python --version
 ```
+### Installation:
 
-##### After driver installed, install the package using the command:
+#### 1) Update the config.py with your specific details
+
+#### 2) Install the package using the command:
 ```
 pip install 'path\to\setup.py'
 ```
 
-##### To uninstall package:
+### Uninstallation:
 ```
 pip uninstall build_csv_model
 ```
 
-#### Usage:
+### Usage:
 ```python
 from build_csv_model import create_model
 
 create_model() # uses default values specified within config.py file
 
 ```
-#### Parameters of create_model: (overrides values specified in config.py)
+##### Parameters of create_model: (overrides values specified in config.py)
 - sample_date: Date of sample YYYY-MM-DD
 - sample_time: Time of sample HH:MM:SS
 - table: Name of target table in database
@@ -42,7 +45,7 @@ create_model() # uses default values specified within config.py file
 - model_path: Output directory for CSV model
 - query_path: Output directory for CSV query
 
-##### Caveats:
+#### Caveats:
 - Uses threading to build each block (timestep) of the model dataframe in parallel. From what I researched, this was the best approach for my use case to achieve desired results and optimizations.
 - Uses chunking to speed-up database querying of large datasets via [SQLAlchemy](https://docs.sqlalchemy.org/en/14/).
 - Uses pandas to process and manipulate returned data utilizing dataframes.
