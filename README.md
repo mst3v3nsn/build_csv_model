@@ -41,3 +41,9 @@ create_model() # uses default values specified within config.py file
 - tag_name: Column name for tags in database
 - model_path: Output directory for CSV model
 - query_path: Output directory for CSV query
+
+##### Caveats:
+- Uses threading to build each block (timestep) of the model dataframe in parallel. From what I researched, this was the best approach for my use case to acheive desired results and optimizations.
+- Uses chunking to speed-up database querying of large datasets via [SQLAlchemy](https://docs.sqlalchemy.org/en/14/).
+- Uses pandas to process and manipulate returned data utilizing dataframes.
+- For each point in the model created, the average of values at each timestep is taken. For boolean values of a point in the model, if any True is found the resultant defaults to True. 
