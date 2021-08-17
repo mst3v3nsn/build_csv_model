@@ -1,0 +1,11 @@
+server = 'youripaddress'
+db = 'yourdatabasename'
+user = 'yourusername'
+enc_psswd = 'yourbase64encryptedpassword'
+_table = 'yourdatabasetable'
+column_index = '_TIMESTAMP'
+column_name = '_NAME'
+_sample_date = 'yourdate'
+_sample_time = 'yourtime'
+_time_span = 2
+debug = True
