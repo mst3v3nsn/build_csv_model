@@ -37,7 +37,6 @@ class SubsetClass(object):
         :rtype: bool
         """
 
-
         if not self.thread.is_alive() and not self.thread_finished:
             if debug:
                 print(f'{Fore.LIGHTYELLOW_EX} Thread: {str(self.thread.ident)} finished!')
